@@ -34,3 +34,12 @@ for num_clusters in range(7):
 counts_full = []
 for i in range(7):
     counts_full.append(globals()['cluster_%s' % i])
+    
+import matplotlib.pyplot as plt
+
+groups = [f"cluster_{i}" for i in range(7)]
+plt.subplots(figsize=(10,5))
+plt.title("Feature intersection diagram")
+plt.xlabel("cluster")
+plt.ylabel("Count intersections")
+plt.bar(groups, counts_full)
